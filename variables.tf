@@ -128,11 +128,13 @@ variable "vm_os_version" {
 }
 
 variable "tags" {
+  description = "The tags to associate with the resources."
   type        = map(string)
-  description = "A map of the tags to use on the resources that are deployed with this module."
-
   default = {
-    source = "terraform"
+    DoNotDelete = "false"
+    Name = "OS Ops"
+    Owner = "aschenck@hashicorp.com"
+    TTL = 48
   }
 }
 
